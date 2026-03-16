@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .about{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1300px;margin:0 auto}
 .about-image{position:relative;aspect-ratio:4/5;background:var(--surface);overflow:hidden}
 .about-image::before{content:'';position:absolute;inset:0;border:1px solid rgba(201,168,76,.2);z-index:2}
-.img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1208,#0e0e0e);font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+.img-ph{width:100%;height:100%;object-fit:cover;display:block;}
 .gold-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:60%;height:60%;border:1px solid rgba(201,168,76,.15);z-index:0}
 .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(201,168,76,.15)}
 .stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--gold);display:block}
@@ -223,7 +223,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
 <section id="about" style="padding:8rem 4rem">
   <div class="about reveal">
     <div class="about-image">
-      <div class="img-ph">[ Image ]</div>
+      <img class="img-ph" src="images/about-image.jpg" alt="Performing arts students" />
       <div class="gold-accent"></div>
     </div>
     <div style="padding:2rem 0">

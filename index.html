@@ -119,7 +119,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .modal-close:hover{color:var(--gold)}
 .modal-body{display:grid;grid-template-columns:1fr 1.5fr;min-height:400px}
 .modal-photo{position:relative;overflow:hidden;min-height:300px}
-.modal-photo-ph{width:100%;height:100%;min-height:300px;background:linear-gradient(160deg,#1a1208,#0e0e0e);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+.modal-photo-ph{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;}
 .modal-content{padding:2.5rem}
 .modal-tag{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:.25rem .7rem;display:inline-block;margin-bottom:1.2rem}
 .modal-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1.1;margin-bottom:.4rem}
@@ -376,7 +376,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
     <button class="modal-close" onclick="closeModal()">&times;</button>
     <div class="modal-body">
       <div class="modal-photo">
-        <div class="modal-photo-ph" id="modalPhoto">[ Photo ]</div>
+        <img id="modalPhoto" class="modal-photo-ph" src="" alt="Profile photo" />
       </div>
       <div class="modal-content">
         <span class="modal-tag" id="modalTag">Theatre</span>
@@ -497,6 +497,7 @@ const hofData = {
     tag: 'Theatre',
     name: 'Loruem Ipsum',
     years: 'Class of 0000',
+    photo: 'images/hof1.jpg',
     desc: 'Lorum Ipsum.',
     achievements: [
       'Loruem Ipsum dolor sit amet consectetur adipiscing elit',
@@ -507,6 +508,7 @@ const hofData = {
     tag: 'Music',
     name: 'Lorem Ipsum',
     years: 'Class of 0000',
+    photo: 'images/hof2.jpg',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
     achievements: [
       'Lorem ipsum dolor sit amet consectetur adipiscing',
@@ -518,6 +520,7 @@ const hofData = {
     tag: 'Dance',
     name: 'Flynn Miller',
     years: 'Class of 2014',
+    photo: 'Flynn-Miller.webp',
     desc: 'Flynn’s path into dance began at age five when he wanted tapping shoes. Growing up as one of the few boys in a dance school, he developed a passion for many styles including hip hop, jazz, contemporary, ballroom, acrobatics, and aerials. His love of musical theatre led him to perform in numerous school and amateur productions, where the sense of community in theatre became a major inspiration. After studying Drama and Dance at Launceston Grammar and completing a Diploma of Musical Theatre in Melbourne, Flynn moved into professional performance. He now works on cruise ships, traveling the world while singing, dancing, and acting for international audiences.',
     achievements: [
       'Completed TCE Drama and Dance at LCGS',
@@ -528,6 +531,7 @@ const hofData = {
     tag: 'Drama',
     name: 'Lorem Ipsum',
     years: 'Class of 0000',
+    photo: 'images/hof4.jpg',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
     achievements: [
       'Lorem ipsum dolor sit amet consectetur adipiscing',
@@ -543,6 +547,9 @@ function openModal(id) {
   document.getElementById('modalName').textContent = d.name;
   document.getElementById('modalYears').textContent = d.years;
   document.getElementById('modalDesc').textContent = d.desc;
+  const modalPhoto = document.getElementById('modalPhoto');
+  modalPhoto.src = d.photo || '';
+  modalPhoto.alt = d.name + ' photo';
   const ul = document.getElementById('modalAchievements');
   ul.innerHTML = d.achievements.map(a => '<li>' + a + '</li>').join('');
   document.getElementById('modalBackdrop').classList.add('open');

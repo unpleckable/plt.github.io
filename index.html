@@ -138,7 +138,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .productions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .production-card{position:relative;overflow:hidden;background:var(--surface)}
 .production-card.featured{grid-row:span 2}
-.prod-image{aspect-ratio:16/9;background:linear-gradient(135deg,#150e00,#0e0e14);position:relative;display:flex;align-items:center;justify-content:center}
+.prod-image{aspect-ratio:16/9;background:linear-gradient(135deg,#150e00,#0e0e14);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.prod-image img{width:100%;height:100%;object-fit:cover;display:block}
 .production-card.featured .prod-image{aspect-ratio:3/4}
 .prod-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 60%)}
 .prod-info{padding:2rem;position:relative}
@@ -403,18 +404,18 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
         <p class="section-label">On Stage</p>
         <h2 class="section-title">Recent <em>Productions</em></h2>
       </div>
-      <a href="#" class="btn-outline">View All</a>
+      <!-- <a href="#" class="btn-outline">View All</a> -->
     </div>
     <div class="productions-grid reveal">
       <div class="production-card featured">
         <div class="prod-image">
-          <div class="img-ph">[ Featured Production Image ]</div>
+          <img src="images/footloose-banner.jpeg" alt="Footloose Production" />
           <div class="prod-overlay"></div>
         </div>
         <div class="prod-info">
-          <span class="prod-tag">Featured</span>
-          <h3 class="prod-title">Lorem Ipsum: The Musical</h3>
-          <p class="prod-date">Lorem Ipsum &middot; 0000</p>
+          <!-- <span class="prod-tag">Featured</span> -->
+          <h3 class="prod-title">Footloose</h3>
+          <p class="prod-date">Senior Students &middot; 2026</p>
         </div>
       </div>
       <div class="production-card">
@@ -430,7 +431,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
       </div>
       <div class="production-card">
         <div class="prod-image">
-          <div class="img-ph">[ Production Image ]</div>
+          <img src="images/production3.png" alt="Sit Amet Consectetur" />
           <div class="prod-overlay"></div>
         </div>
         <div class="prod-info">

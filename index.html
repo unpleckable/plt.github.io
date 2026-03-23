@@ -118,8 +118,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .modal-close{position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .2s;z-index:1}
 .modal-close:hover{color:var(--gold)}
 .modal-body{display:grid;grid-template-columns:1fr 1.5fr;min-height:400px}
-.modal-photo{position:relative;overflow:hidden;min-height:300px}
-.modal-photo-ph{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;}
+.modal-photo{position:relative;overflow:hidden;min-height:300px;background:var(--black);aspect-ratio:1}
+.modal-photo-ph{width:100%;height:100%;min-height:300px;object-fit:contain;display:block;}
 .modal-content{padding:2.5rem}
 .modal-tag{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:.25rem .7rem;display:inline-block;margin-bottom:1.2rem}
 .modal-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1.1;margin-bottom:.4rem}

@@ -100,7 +100,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hof-card{cursor:pointer;position:relative;overflow:hidden;background:var(--surface);border:1px solid rgba(201,168,76,0);transition:border-color .35s,transform .35s}
 .hof-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
 .hof-photo{aspect-ratio:3/4;position:relative;overflow:hidden}
-.hof-photo-ph{width:100%;height:100%;background:linear-gradient(160deg,#1a1208,#0e0e0e);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;transition:transform .5s ease}
+.hof-photo-ph{width:100%;height:100%;background:linear-gradient(160deg,#1a1208,#0e0e0e);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;transition:transform .5s ease;object-fit:cover}
 .hof-card:hover .hof-photo-ph{transform:scale(1.04)}
 .hof-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 0%,transparent 55%);opacity:0;transition:opacity .35s}
 .hof-card:hover .hof-overlay{opacity:1}
@@ -319,13 +319,13 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
 
       <div class="hof-card" onclick="openModal('hof1')">
         <div class="hof-photo">
-          <div class="hof-photo-ph">[ Photo ]</div>
+          <img src="images/matthewdeaner.webp" alt="Matthew Deaner" class="hof-photo-ph" />
           <div class="hof-overlay"></div>
           <span class="hof-view">View Profile</span>
         </div>
         <div class="hof-info">
-          <h3 class="hof-name">Lorem Ipsum</h3>
-          <p class="hof-year">Class of 0000 &nbsp;&middot;&nbsp; Theatre</p>
+          <h3 class="hof-name">Matthew Deaner</h3>
+          <p class="hof-year">Class of 1990 &nbsp;&middot;&nbsp; Screen Producer</p>
         </div>
       </div>
 
@@ -500,14 +500,14 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
 // Hall of Fame data — fill in real info here
 const hofData = {
   hof1: {
-    tag: 'Theatre',
-    name: 'Loruem Ipsum',
-    years: 'Class of 0000',
-    photo: 'images/hof1.jpg',
-    desc: 'Lorum Ipsum.',
+    tag: 'Screen Producer',
+    name: 'Matthew Deaner',
+    years: 'Class of 1990',
+    photo: 'images/matthewdeaner.webp',
+    desc: 'Matthew Deaner has built a career helping people tell stories in film, TV, and games. From a young age, he was interested in storytelling, but he preferred working behind the scenes to help others be seen and heard. While studying at Launceston Grammar, he showed strong leadership skills. He was a School Prefect and Debating Captain, and he also played hockey and tennis, taking on leadership roles in sport as well. After finishing school, he studied law and worked in cities like Sydney and London. There, he developed skills in problem-solving and understanding rules and policies. He later moved into the creative industry, working with Screen Australia and the Australian Subscription Television and Radio Association, where he helped support people who create movies and shows. Today, he is the CEO of Screen Producers Australia, where he supports filmmakers and creators across Australia and helps their stories reach audiences around the world.',
     achievements: [
-      'Loruem Ipsum dolor sit amet consectetur adipiscing elit',
-      'Loreum Ipsum sed do eiusmod tempor incididunt ut labore',
+      'Became CEO of Screen Producers Australia, supporting filmmakers across the country',
+      'Helped shape policies for the screen industry while working at Screen Australia and the Australian Subscription Television and Radio Association.'
     ]
   },
   hof2: {

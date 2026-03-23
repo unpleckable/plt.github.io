@@ -118,8 +118,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .modal-close{position:absolute;top:1.2rem;right:1.4rem;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .2s;z-index:1}
 .modal-close:hover{color:var(--gold)}
 .modal-body{display:grid;grid-template-columns:1fr 1.5fr;min-height:400px}
-.modal-photo{position:relative;overflow:hidden;min-height:300px;background:var(--black);aspect-ratio:1}
-.modal-photo-ph{width:100%;height:100%;min-height:300px;object-fit:contain;display:block;}
+.modal-photo{position:relative;overflow:hidden;min-height:300px;background:var(--black)}
+.modal-photo-ph{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;}
 .modal-content{padding:2.5rem}
 .modal-tag{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:.25rem .7rem;display:inline-block;margin-bottom:1.2rem}
 .modal-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1.1;margin-bottom:.4rem}
@@ -331,13 +331,13 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
 
       <div class="hof-card" onclick="openModal('hof2')">
         <div class="hof-photo">
-          <div class="hof-photo-ph">[ Photo ]</div>
+          <img src="images/Abbey-Hannson.webp" alt="Abbey Hansson" class="hof-photo-ph" />
           <div class="hof-overlay"></div>
           <span class="hof-view">View Profile</span>
         </div>
         <div class="hof-info">
-          <h3 class="hof-name">Lorem Ipsum</h3>
-          <p class="hof-year">Class of 0000 &nbsp;&middot;&nbsp; Music</p>
+          <h3 class="hof-name">Abbey Hansson </h3>
+          <p class="hof-year">Class of 2013 &nbsp;&middot;&nbsp; Singer, Dancer, Actor</p>
         </div>
       </div>
 
@@ -511,10 +511,10 @@ const hofData = {
     ]
   },
   hof2: {
-    tag: 'Music',
-    name: 'Lorem Ipsum',
-    years: 'Class of 0000',
-    photo: 'images/hof2.jpg',
+    tag: 'Singer, Dancer, Actor',
+    name: 'Abbey Hansson',
+    years: 'Class of 2013',
+    photo: 'images/Abbey-Hannson.webp',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
     achievements: [
       'Lorem ipsum dolor sit amet consectetur adipiscing',

@@ -4,6 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>LCGS Performing Arts</title>
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -12,12 +19,13 @@
   --black:#0A0A0A;--charcoal:#141414;--surface:#1A1A1A;--surface2:#222;
   --white:#F5F0E8;--muted:#7A7060;
 }
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'Cormorant Garamond',serif;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--gold-dim) var(--black)}
-body::-webkit-scrollbar{width:8px}
-body::-webkit-scrollbar-track{background:var(--black)}
-body::-webkit-scrollbar-thumb{background-color:var(--gold-dim);border-radius:10px;border:2px solid var(--black)}
-body::-webkit-scrollbar-thumb:hover{background-color:var(--gold)}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold-dim) var(--black)}
+html::-webkit-scrollbar{width:8px}
+html::-webkit-scrollbar-track{background:var(--black)}
+html::-webkit-scrollbar-thumb{background-color:var(--gold-dim);border-radius:10px;border:2px solid var(--black)}
+html::-webkit-scrollbar-thumb:hover{background-color:var(--gold)}
+html::-webkit-scrollbar-button{display:none}
+body{background:var(--black);color:var(--white);font-family:'Cormorant Garamond',serif;overflow-x:hidden}
 
 
 
@@ -127,6 +135,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .modal::-webkit-scrollbar-track{background:var(--charcoal)}
 .modal::-webkit-scrollbar-thumb{background-color:var(--gold-dim);border-radius:10px;border:2px solid var(--charcoal)}
 .modal::-webkit-scrollbar-thumb:hover{background-color:var(--gold)}
+.modal::-webkit-scrollbar-button{display:none}
 
 
 .productions-modal-list { list-style: none; padding: 1rem 2.5rem 2.5rem; }

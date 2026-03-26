@@ -96,8 +96,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hof-section{background:var(--charcoal);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
 .hof-inner{max-width:1300px;margin:0 auto}
 .hof-header{text-align:center;margin-bottom:4rem}
-.hof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.hof-card{cursor:pointer;position:relative;overflow:hidden;background:var(--surface);border:1px solid rgba(201,168,76,0);transition:border-color .35s,transform .35s}
+.hof-grid{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.hof-card{cursor:pointer;position:relative;overflow:hidden;background:var(--surface);border:1px solid rgba(201,168,76,0);transition:border-color .35s,transform .35s;max-width:300px}
 .hof-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
 .hof-photo{aspect-ratio:3/4;position:relative;overflow:hidden}
 .hof-photo-ph{width:100%;height:100%;background:linear-gradient(160deg,#1a1208,#0e0e0e);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;transition:transform .5s ease;object-fit:cover}
@@ -353,18 +353,6 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
         </div>
       </div>
 
-      <div class="hof-card" onclick="openModal('hof4')">
-        <div class="hof-photo">
-          <div class="hof-photo-ph">[ Photo ]</div>
-          <div class="hof-overlay"></div>
-          <span class="hof-view">View Profile</span>
-        </div>
-        <div class="hof-info">
-          <h3 class="hof-name">Lorem Ipsum</h3>
-          <p class="hof-year">Class of 0000 &nbsp;&middot;&nbsp; Drama</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -532,18 +520,6 @@ const hofData = {
       'Completed TCE Drama and Dance at LCGS',
       'Got a Diploma of Musical Theatre at Spectrum Dance Studio in Melbourne'
     ]
-  },
-  hof4: {
-    tag: 'Drama',
-    name: 'Lorem Ipsum',
-    years: 'Class of 0000',
-    photo: 'images/hof4.jpg',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.',
-    achievements: [
-      'Lorem ipsum dolor sit amet consectetur adipiscing',
-      'Sed do eiusmod tempor incididunt ut labore',
-      'Ut enim ad minim veniam quis nostrud exercitation'
-    ]
   }
 };
 
@@ -576,7 +552,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 // Scroll reveal
 const obs = new IntersectionObserver(
   entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-  { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  { threshold: 0.1, rootMargin: '0px 0px -50px 0px' } 
 );
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>

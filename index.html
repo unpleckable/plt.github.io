@@ -168,6 +168,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .prod-image img{width:100%;height:auto;object-fit:cover;display:block}
 .production-card.featured .prod-image{aspect-ratio:3/4}
 .prod-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 60%)}
+.prod-image .img-ph { height: 100%; } /* Ensure img-ph fills height within prod-image */
 .prod-info{padding:2rem;position:relative}
 .prod-tag{font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:.25rem .6rem;display:inline-block;margin-bottom:.8rem}
 .prod-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;font-style:italic;margin-bottom:.5rem}
@@ -441,7 +442,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
           <!-- <span class="prod-tag">Featured</span> -->
           <h3 class="prod-title">Footloose</h3>
           <p class="prod-date">Senior Students &middot; 2026</p>
-          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="prod-desc">Footloose is about Ren McCormack, a teenage boy from Chicago who moves to the strict town of Bomont, where dancing and rock music are banned after a past tragedy. Struggling to fit in, Ren teams up with Ariel and his friend Willard to challenge the rules. In the end, he helps the town heal and brings back dancing, allowing a senior prom to take place.</p>
           <div class="prod-footer">
             <span class="btn-outline" style="font-size:.55rem;padding:.45rem 1rem;">2-5 September</span>
             <a href="https://theatrenorth.com.au/lcgs-footloose-26" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:.7rem;padding:.7rem 1.6rem;">Book Tickets</a>
@@ -457,19 +458,19 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
           <!-- <span class="prod-tag">Drama</span> -->
           <h3 class="prod-title">Grease</h3>
           <p class="prod-date">Senior Students &middot; 2025</p>
-          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="prod-desc">Danny and Sandy enjoy a whirlwind summer. Thinking they have to go their separate ways when the new school year starts, imagine their surprise when they meet on the bleachers! But High School is a totally different ballgame at Rydell High, where appearances and gossip reign supreme. Can their love survive the school year and, perhaps more importantly, are they brave enough to be true to themselves?</p>
         </div>
       </div>
       <div class="production-card">
         <div class="prod-image">
-          <img src="images/StrictlyBallroom.jpg" alt="Strictly Ballroom" />
+          <img class="img-ph" src="images/StrictlyBallroom.jpg" alt="Strictly Ballroom" />
           <div class="prod-overlay"></div>
         </div>
         <div class="prod-info">
           <!-- <span class="prod-tag">Dance</span> -->
           <h3 class="prod-title">Strictly Ballroom</h3>
           <p class="prod-date">Senior Students &middot; 2024</p>
-          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="prod-desc">Launceston Grammar's musical theatre production for 2024 is Baz Luhrmann's Strictly Ballroom The Musical. Adapted from the 1992 film, this is the inspiring story of Scott, a championship ballroom dancer who defies all the rules to follow his heart. After making up his own moves that do not please the Australian Dance Federation, he meets Fran, a beginner who is not very skilled at dancing.</p>
         </div>
       </div>
     </div>

@@ -133,6 +133,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .modal-achievements li::before{content:'—';position:absolute;left:0;color:var(--gold-dim);font-size:.8rem}
 
 /* PRODUCTIONS */
+.productions-modal-list { list-style: none; padding: 1rem 2.5rem 2.5rem; }
+.productions-modal-list li { display: flex; justify-content: space-between; padding: .8rem 0; border-bottom: 1px solid rgba(201, 168, 76, .1); font-size: 1.05rem; }
+.productions-modal-list li .year { font-family: 'Montserrat', sans-serif; font-size: .7rem; letter-spacing: .15em; color: var(--muted); }
+.productions-modal-list li .name { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; }
+
 .productions-inner{max-width:1300px;margin:0 auto}
 .productions-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4rem}
 .productions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
@@ -151,6 +156,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
   display:flex;align-items:center;justify-content:space-between;margin-top:0.85rem;
 }
 
+.prod-desc {
+  font-size: .95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(245,240,232,.65);
+  margin: 1rem 0 1.5rem;
+}
 /* STAFF */
 .staff-section{background:var(--charcoal);border-top:1px solid rgba(201,168,76,.1)}
 .staff-inner{max-width:1300px;margin:0 auto}
@@ -396,7 +408,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
         <p class="section-label">On Stage</p>
         <h2 class="section-title">Recent <em>Productions</em></h2>
       </div>
-      <!-- <a href="#" class="btn-outline">View All</a> -->
+      <a href="javascript:void(0)" onclick="openProductionsModal()" class="btn-outline">View All</a>
     </div>
     <div class="productions-grid reveal">
       <div class="production-card featured">
@@ -408,6 +420,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
           <!-- <span class="prod-tag">Featured</span> -->
           <h3 class="prod-title">Footloose</h3>
           <p class="prod-date">Senior Students &middot; 2026</p>
+          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <div class="prod-footer">
             <span class="btn-outline" style="font-size:.55rem;padding:.45rem 1rem;">2-5 September</span>
             <a href="https://theatrenorth.com.au/lcgs-footloose-26" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:.7rem;padding:.7rem 1.6rem;">Book Tickets</a>
@@ -423,6 +436,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
           <!-- <span class="prod-tag">Drama</span> -->
           <h3 class="prod-title">Grease</h3>
           <p class="prod-date">Senior Students &middot; 2025</p>
+          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
       <div class="production-card">
@@ -434,11 +448,37 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.12);padding
           <!-- <span class="prod-tag">Dance</span> -->
           <h3 class="prod-title">Strictly Ballroom</h3>
           <p class="prod-date">Senior Students &middot; 2024</p>
+          <p class="prod-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- PRODUCTIONS MODAL -->
+<div class="modal-backdrop" id="productionsModalBackdrop" onclick="closeProductionsModalOutside(event)">
+  <div class="modal" id="productionsModal">
+    <button class="modal-close" onclick="closeProductionsModal()">&times;</button>
+    <div class="modal-content" style="padding: 2.5rem 0 0;">
+        <div style="padding: 0 2.5rem;">
+            <h2 class="modal-name">Past Productions</h2>
+            <p class="modal-years">A look back at our history</p>
+            <div class="modal-divider"></div>
+        </div>
+        <ul class="productions-modal-list">
+            <li><span class="name">Lorem Ipsum Dolor</span><span class="year">2023</span></li>
+            <li><span class="name">Consectetur Adipiscing</span><span class="year">2022</span></li>
+            <li><span class="name">Elit Sed Do</span><span class="year">2021</span></li>
+            <li><span class="name">Eiusmod Tempor</span><span class="year">2020</span></li>
+            <li><span class="name">Incididunt Ut Labore</span><span class="year">2019</span></li>
+            <li><span class="name">Et Dolore Magna</span><span class="year">2018</span></li>
+            <li><span class="name">Aliqua Ut Enim</span><span class="year">2017</span></li>
+            <li><span class="name">Ad Minim Veniam</span><span class="year">2016</span></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
 
 <!-- STAFF -->
 <!-- <section id="staff" class="staff-section" style="padding:8rem 4rem">
@@ -550,11 +590,25 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+function openProductionsModal() {
+  document.getElementById('productionsModalBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductionsModal() {
+  document.getElementById('productionsModalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function closeModalOutside(e) {
   if (e.target === document.getElementById('modalBackdrop')) closeModal();
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function closeProductionsModalOutside(e) {
+  if (e.target === document.getElementById('productionsModalBackdrop')) closeProductionsModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeProductionsModal(); } });
 
 // Scroll reveal
 const obs = new IntersectionObserver(

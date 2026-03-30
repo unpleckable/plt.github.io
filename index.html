@@ -561,6 +561,7 @@ const hofData = {
     name: 'Matthew Deaner',
     years: 'Class of 1990',
     photo: 'images/matthewdeaner.webp',
+    objectFit: 'contain',
     desc: 'Matthew Deaner has built a career helping people tell stories in film, TV, and games. From a young age, he was interested in storytelling, but he preferred working behind the scenes to help others be seen and heard. While studying at Launceston Grammar, he showed strong leadership skills. He was a School Prefect and Debating Captain, and he also played hockey and tennis, taking on leadership roles in sport as well. After finishing school, he studied law and worked in cities like Sydney and London. There, he developed skills in problem-solving and understanding rules and policies. He later moved into the creative industry, working with Screen Australia and the Australian Subscription Television and Radio Association, where he helped support people who create movies and shows. Today, he is the CEO of Screen Producers Australia, where he supports filmmakers and creators across Australia and helps their stories reach audiences around the world.',
     achievements: [
       'Became CEO of Screen Producers Australia, supporting filmmakers across the country',
@@ -599,8 +600,9 @@ function openModal(id) {
   document.getElementById('modalYears').textContent = d.years;
   document.getElementById('modalDesc').textContent = d.desc;
   const modalPhoto = document.getElementById('modalPhoto');
-  modalPhoto.src = d.photo || '';
-  modalPhoto.alt = d.name + ' photo';
+  modalPhoto.src = d.photo || ''; // Set image source
+  modalPhoto.alt = d.name + ' photo'; // Set alt text
+  modalPhoto.style.objectFit = d.objectFit || 'cover'; // Default to 'cover', use 'contain' if specified
   const ul = document.getElementById('modalAchievements');
   ul.innerHTML = d.achievements.map(a => '<li>' + a + '</li>').join('');
   document.getElementById('modalBackdrop').classList.add('open');
